@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: 'home-content',
+        name: 'battle-view',
     }
 </script>
 
