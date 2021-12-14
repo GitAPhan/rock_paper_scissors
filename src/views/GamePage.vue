@@ -1,10 +1,10 @@
 <template>
   <div>
     <!-- shown only if login_status is true -->
-    <article v-if="login_status == true">
+    <article id="battle_window" v-if="login_status == true">
       <score-board></score-board>
-      <user-selection></user-selection>
       <battle-view></battle-view>
+      <user-selection></user-selection>
     </article>
     <!-- redirect message for when user is not logged in -->
     <!-- shown only if login_status is not true -->
@@ -54,4 +54,13 @@ export default {
 </script>
 
 <style scoped>
+#battle_window {
+  display: grid;
+  place-items: center;
+  width: 400px;
+  height: 500px;
+  border: black 2px solid;
+  border-radius: 25px;
+}
+
 </style>

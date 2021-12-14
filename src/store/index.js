@@ -7,15 +7,22 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    login_status_message: undefined,
+    login_status_message: 'Please login to continue...',
     scoreboard: {
       usr_name: undefined,
       usr_img: undefined,
       usr_score: 0,
       bot_name: undefined,
       bot_img: undefined,
-      bot_score: 0
+      bot_score: 0,
+      tie_score: 0
     },
+    selection_animation: {
+      usr_name: undefined,
+      usr_img: undefined,
+      bot_name: undefined,
+      bot_img: undefined,
+    }
   },
   mutations: {
     update_login_status_message(state, payload) {
@@ -23,8 +30,10 @@ export default new Vuex.Store({
     },
     update_scoreboard(state, payload) {
       state.scoreboard = payload;
-    }
-
+    },
+    update_selection_animation(state, payload) {
+      state.selection_animation = payload;
+    },
   },
   actions: {
     login_verification(store, payload) {

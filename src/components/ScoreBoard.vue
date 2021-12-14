@@ -1,27 +1,45 @@
 <template>
-    <div id="scoreboard">
-        <h3>Player Points:</h3>
-        <p>{{scoreboard.usr_score}}</p>
-        <h3>Computer Points:</h3>
-        <p>{{scoreboard.bot_score}}</p>
-    </div>
+  <div id="scoreboard">
+    <section>
+      <h4>Player Points:</h4>
+      <!-- display scoreboard, value from store -->
+      <h2>{{ scoreboard.usr_score }}</h2>
+    </section>
+    <section>
+      <h4>Ties:</h4>
+      <h2>{{ scoreboard.tie_score }}</h2>
+    </section>
+    <section>
+      <h4>Computer Points:</h4>
+      <h2>{{ scoreboard.bot_score }}</h2>
+    </section>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: 'score-board',
-        computed: {
-            scoreboard() {
-                return this.$store.state['scoreboard']; 
-            }
-        },
-    }
+export default {
+  name: "score-board",
+  computed: {
+    scoreboard() {
+      return this.$store.state["scoreboard"];
+    },
+  },
+};
 </script>
 
 <style scoped>
 #scoreboard {
-    display: grid;
-    grid-auto-flow: column;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 20px;
+  place-items: center;
 }
 
+section{
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 10px;
+  place-items: center;
+  /* padding: 10px 20px; */
+}
 </style>

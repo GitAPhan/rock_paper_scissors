@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Would you like to play a game?</h1>
     <!-- form to gather login information -->
     <form action="javascript:void(0)">
       <input type="text" ref="email_input" placeholder="Email" />
@@ -50,4 +51,9 @@ export default {
 </script>
 
 <style scoped>
+div {
+  display: grid;
+  place-items: center;
+  row-gap: 20px;
+}
 </style>
